@@ -1,11 +1,15 @@
 .container {
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 90%;
+  height: 100%;
   font-family: 'Courier New', Courier, monospace;
+  background-color: #dc092e;
+  margin-top: 2%;
+  color: #170606;
+  border: 4px solid #242424;
+  border-radius: 8px;
 }
 
 .infoSection {
@@ -14,37 +18,68 @@
   justify-content: flex-start;
   align-items: center;
   width: 50%;
+  height: 100%;
+  border: 2px solid #242424;
 }
 
 .pokemonName {
     padding: 2%;
     font-weight: bold;
-    border: 2px solid black;
+    border-bottom: 2px solid #242424;
     width: 100%;
     text-align: center;
+    background-color: #34899b;
+    font-size: 24px;
+    height: 16%;
 }
 
 .imgContainer {
-  width: 400px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 89%;
 }
 
 .img {
-  width: 120%;
+  width: 160%;
 }
 
-.name {
+.statName {
   font-weight: bold;
+}
+
+.infoScreen {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 24px;
+  background-color: #6bcadd;
+  overflow: hidden;
+}
+
+.infoScreenOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 64%;
+  height: 64%;
+  border: 2px solid #000000;
+  border-radius: 56px;
+  background-color: #bfbebb;
 }
 
 .sideContainer {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
-  border: 2px solid black;
+  border: 2px solid #242424;
 }
 
 .nav {
@@ -53,30 +88,131 @@
   width: 100%;
 }
 
-.statsContainer,
-.abilitiesContainer {
+.stats,
+.abilities {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   padding: 2%;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
+  border-right: 2px solid #242424;
+  border-bottom: 2px solid #242424;
   font-weight: bold;
 }
 
-.statsContainer h3,
-.abilitiesContainer h3 {
+.stats h3,
+.abilities h3 {
   text-align: center;
 }
 
-.abilitiesContainer ul,
-.statsContainer ul {
-  list-style-type: none;
-  padding-left: 0;
+.statsScreen {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 32px;
+  background-color: #6bcadd;
+  overflow: hidden;
 }
 
-.abilitiesContainer li,
-.statsContainer li {
-  margin-bottom: 8px;
+.statsScreenOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  border: 2px solid #000000;
+  border-radius: 48px;
+  background-color: #bfbebb;
+}
+
+.statsInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+  font-size: 16px;
+}
+
+.bigCircle {
+  height: 64px;
+  width: 64px;
+  background-color: #bfbebb;
+  border-radius: 50%;
+  display: flex;
+  border: 2px solid #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallerCircle {
+  height: 88%;
+  width: 88%;
+  background-color: #106fa7;
+  border-radius: 50%;
+  border: 1px solid #000000;
+}
+
+.smallCircle1 {
+  height: 16px;
+  width: 16px;
+  background-color: #d42c43;
+  border-radius: 50%;
+  display: flex;
+  border: 2px solid #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallCircle2 {
+  height: 16px;
+  width: 16px;
+  background-color: #f0c56e;
+  border-radius: 50%;
+  display: flex;
+  border: 2px solid #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallCircle3 {
+  height: 16px;
+  width: 16px;
+  background-color: #9fa684;
+  border-radius: 50%;
+  display: flex;
+  border: 2px solid #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.bleepers {
+  display: flex;
+  gap: 8px;
+  padding-left: 16px;
+}
+
+.pokedexTop {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+@media (max-width: 720px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .infoSection {
+    width: 100%;
+  }
+
+  .sideContainer {
+    width: 100%;
+  }
 }

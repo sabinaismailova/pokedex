@@ -53,47 +53,57 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonData }) => {
   return (
     <div className={styles.container}>
       <div className={styles.infoSection}>
-        <h1 className={styles.pokemonName}>
-          {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}
-        </h1>
-        <div className={styles.imgContainer}>
-          <img src={imageUrl} alt="Pokemon Image" className={styles.img} />
+        <div className={styles.pokedexTop}>
+          <div className={styles.bigCircle}>
+            <div className={styles.smallerCircle}></div>
+          </div>
+          <div className={styles.bleepers}>
+            <div className={styles.smallCircle1}></div>
+            <div className={styles.smallCircle2}></div>
+            <div className={styles.smallCircle3}></div>
+          </div>
+        </div>
+        <div className={styles.infoScreenOuter}>
+          <div className={styles.infoScreen}>
+            <h1 className={styles.pokemonName}>
+              {pokemonData.name.charAt(0).toUpperCase() +
+                pokemonData.name.slice(1)}
+            </h1>
+            <div className={styles.imgContainer}>
+              <img src={imageUrl} alt="Pokemon Image" className={styles.img} />
+            </div>
+          </div>
         </div>
       </div>
-      <div
-        id="side"
-        className={styles.sideContainer} 
-      >
-        <div
-          id="nav"
-          className={styles.nav}
-        >
-          <div className={styles.abilitiesContainer}>
-            <h3>Abilities</h3>
-          </div>
-          <div className={styles.statsContainer}>
-            <h3>Stats</h3>
-            {/* <ul>
+      <div id="side" className={styles.sideContainer}>
+        <div className={styles.statsScreenOuter}>
+          <div className={styles.statsScreen}>
+            <div id="nav" className={styles.nav}>
+              <div className={styles.abilities}>
+                <h3>Abilities</h3>
+              </div>
+              <div className={styles.stats}>
+                <h3>Stats</h3>
+                {/* <ul>
                 {pokemonData.stats.map((stat, index) => (
                     <li key={index}>
                     {stat.stat.name}: {stat.base_stat}
                     </li>
                 ))}
                 </ul> */}
+              </div>
+            </div>
+            <div id="output" className={styles.statsInfo}>
+              <ul>
+                {pokemonData.abilities.map((ability, index) => (
+                  <>
+                    <li className={styles.statName}>{ability.ability.name}</li>
+                    <li style={{ padding: "4%" }}>{ability.ability.effect}</li>
+                  </>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-        <div
-          id="output"
-          style={{ display: "flex", flexDirection: "column", width: "100%", height: '100%', padding: '2%'}}
-        >
-          <ul>
-            {pokemonData.abilities.map((ability, index) => (
-              <>
-                <li className={styles.name}>{ability.ability.name}</li>
-                <li style={{padding: '2%'}}>{ability.ability.effect}</li>
-              </>
-            ))}
-          </ul>
         </div>
       </div>
     </div>

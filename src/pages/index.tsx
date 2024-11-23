@@ -37,7 +37,6 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <h1>Pokedex</h1>
       <Search onSearch={handleSearch} />
       <Pokedex pokemonData={pokemonData} />
     </div>
