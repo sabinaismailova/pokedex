@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 90%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.pokemonName {
+    padding: 2%;
+    font-weight: bold;
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+}
+
+.imgContainer {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.img {
+  width: 120%;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.sideContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.statsContainer,
+.abilitiesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2%;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+.statsContainer h3,
+.abilitiesContainer h3 {
+  text-align: center;
+}
+
+.abilitiesContainer ul,
+.statsContainer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.abilitiesContainer li,
+.statsContainer li {
+  margin-bottom: 8px;
+}
