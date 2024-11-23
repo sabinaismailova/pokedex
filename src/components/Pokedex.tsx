@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "./pokedex.module.scss";
+import StatsScreen from "./StatsScreen";
 
 interface PokemonAbility {
-  ability: {
     name: string;
     effect: string;
-  };
 }
 
 interface PokemonStat {
-  stat: {
     name: string;
-  };
-  base_stat: number;
+    value: number;
 }
 
-interface PokemonData {
+interface pokemon {
   name: string;
   sprites: {
     front_default: string;
@@ -26,29 +23,29 @@ interface PokemonData {
 }
 
 interface PokedexProps {
-  pokemonData: PokemonData | null;
+  pokemon: pokemon | null;
 }
 
-const Pokedex: React.FC<PokedexProps> = ({ pokemonData }) => {
+const Pokedex: React.FC<PokedexProps> = ({ pokemon }) => {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [isFrontImage, setIsFrontImage] = useState<boolean>(true);
 
   useEffect(() => {
-    if (pokemonData) {
-      setImageUrl(pokemonData.sprites.front_default);
+    if (pokemon) {
+      setImageUrl(pokemon.sprites.front_default);
       const interval = setInterval(() => {
         setImageUrl((prevUrl) =>
-          prevUrl === pokemonData.sprites.front_default
-            ? pokemonData.sprites.back_default
-            : pokemonData.sprites.front_default
+          prevUrl === pokemon.sprites.front_default
+            ? pokemon.sprites.back_default
+            : pokemon.sprites.front_default
         );
         setIsFrontImage((prev) => !prev);
       }, 1800);
       return () => clearInterval(interval);
     }
-  }, [pokemonData]);
+  }, [pokemon]);
 
-  if (!pokemonData) return null;
+  if (!pokemon) return null;
 
   return (
     <div className={styles.container}>
@@ -66,8 +63,8 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonData }) => {
         <div className={styles.infoScreenOuter}>
           <div className={styles.infoScreen}>
             <h1 className={styles.pokemonName}>
-              {pokemonData.name.charAt(0).toUpperCase() +
-                pokemonData.name.slice(1)}
+              {pokemon.name.charAt(0).toUpperCase() +
+                pokemon.name.slice(1)}
             </h1>
             <div className={styles.imgContainer}>
               <img src={imageUrl} alt="Pokemon Image" className={styles.img} />
@@ -76,35 +73,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemonData }) => {
         </div>
       </div>
       <div id="side" className={styles.sideContainer}>
-        <div className={styles.statsScreenOuter}>
-          <div className={styles.statsScreen}>
-            <div id="nav" className={styles.nav}>
-              <div className={styles.abilities}>
-                <h3>Abilities</h3>
-              </div>
-              <div className={styles.stats}>
-                <h3>Stats</h3>
-                {/* <ul>
-                {pokemonData.stats.map((stat, index) => (
-                    <li key={index}>
-                    {stat.stat.name}: {stat.base_stat}
-                    </li>
-                ))}
-                </ul> */}
-              </div>
-            </div>
-            <div id="output" className={styles.statsInfo}>
-              <ul>
-                {pokemonData.abilities.map((ability, index) => (
-                  <>
-                    <li className={styles.statName}>{ability.ability.name}</li>
-                    <li style={{ padding: "4%" }}>{ability.ability.effect}</li>
-                  </>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+        <StatsScreen abilities={pokemon.abilities} stats={pokemon.stats}/>
       </div>
     </div>
   );

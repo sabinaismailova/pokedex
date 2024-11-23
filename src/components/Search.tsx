@@ -18,7 +18,7 @@ const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
 
     try {
       const response = await axios.get(`http://localhost:8080/pokemon/${pokemonName}`);
-      onSearch(response.data); // Pass the fetched data to parent component
+      onSearch(response.data);
     } catch (error) {
       console.error('Error fetching data from the API:', error);
       alert('Pokémon not found. Please try another name.');

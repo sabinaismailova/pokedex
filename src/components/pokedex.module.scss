@@ -100,11 +100,6 @@
   font-weight: bold;
 }
 
-.stats h3,
-.abilities h3 {
-  text-align: center;
-}
-
 .statsScreen {
   display: flex;
   flex-direction: column;
@@ -128,13 +123,25 @@
   background-color: #bfbebb;
 }
 
-.statsInfo {
+.statsContent {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   padding: 2%;
   font-size: 16px;
+}
+
+.activeStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
+  border-right: 2px solid #242424;
+  border-bottom: 2px solid #242424;
+  font-weight: bold;
+  background-color: #4691a0;
 }
 
 .bigCircle {

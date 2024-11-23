@@ -5,20 +5,16 @@ import styles from './index.module.scss'
 
 // Define types for the Pokémon data
 interface PokemonAbility {
-  ability: {
-    name: string;
-    effect: string;
-  };
+  name: string;
+  effect: string;
 }
 
 interface PokemonStat {
-  stat: {
-    name: string;
-  };
-  base_stat: number;
+  name: string;
+  value: number;
 }
 
-interface PokemonData {
+interface Pokemon {
   name: string;
   sprites: {
     front_default: string;
@@ -29,16 +25,17 @@ interface PokemonData {
 }
 
 const Home: React.FC = () => {
-  const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
+  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
-  const handleSearch = (data: PokemonData) => {
-    setPokemonData(data);
+  const handleSearch = (data: Pokemon) => {
+    setPokemon(data);
   };
 
   return (
     <div className={styles.pageContainer}>
       <Search onSearch={handleSearch} />
-      <Pokedex pokemonData={pokemonData} />
+      {/* Pass abilities and stats separately to Pokedex/StatsScreen */}
+      {pokemon && <Pokedex pokemon={pokemon}/>}
     </div>
   );
 };
