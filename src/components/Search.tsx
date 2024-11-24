@@ -11,6 +11,11 @@ interface PokemonSearchProps {
 const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
   const [pokemonName, setPokemonName] = useState<string>("");
 
+  const playSound = (link:string) => {
+    const sound = new Audio(link);
+    sound.play();
+  };
+
   const handleRequest = async () => {
     if (!pokemonName) {
       alert("Please enter a Pokémon name!");
@@ -25,6 +30,8 @@ const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
         },
       });
       onSearch(response.data);
+      console.log(response.data.cry);
+      playSound(response.data.cry);
     } catch (error) {
       console.error("Error fetching data from the API:", error);
       alert("Pokémon not found. Please try another name.");
