@@ -4,7 +4,7 @@
   align-items: flex-start;
   width: 100%;
   height: 100%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: #dc092e;
   margin-top: 2%;
   color: #170606;
@@ -23,14 +23,14 @@
 }
 
 .pokemonName {
-    padding: 2%;
-    font-weight: bold;
-    border-bottom: 2px solid #242424;
-    width: 100%;
-    text-align: center;
-    background-color: #34899b;
-    font-size: 24px;
-    height: 16%;
+  padding: 2%;
+  font-weight: bold;
+  border-bottom: 2px solid #242424;
+  width: 100%;
+  text-align: center;
+  background-color: #34899b;
+  font-size: 24px;
+  height: 16%;
 }
 
 .imgContainer {
@@ -100,6 +100,13 @@
   font-weight: bold;
 }
 
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+  border-bottom: 2px solid #242424;
+}
+
 .statsScreen {
   display: flex;
   flex-direction: column;
@@ -127,9 +134,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 2%;
-  font-size: 16px;
+  font-size: 96%;
+  overflow: scroll;
 }
 
 .activeStat {
@@ -145,8 +153,8 @@
 }
 
 .bigCircle {
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   background-color: #bfbebb;
   border-radius: 50%;
   display: flex;
@@ -194,6 +202,63 @@
   border: 2px solid #000000;
   justify-content: center;
   align-items: center;
+}
+
+/* Glowing effects */
+.glowingBlue {
+  animation: glowBlue 0.01s ease-in-out forwards;
+}
+
+.glowingRed {
+  animation: glowRed 0.01s ease-in-out forwards;
+}
+
+.glowingYellow {
+  animation: glowYellow 0.01s ease-in-out forwards;
+}
+
+.glowingGreen {
+  animation: glowGreen 0.01s ease-in-out forwards;
+}
+
+@keyframes glowBlue {
+  0% {
+    box-shadow: 0 0 0px transparent;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px rgb(16, 111, 167, 0.6),
+      0 8px 8px rgb(16, 111, 167, 0.6);
+  }
+}
+
+@keyframes glowRed {
+  0% {
+    box-shadow: 0 0 0px transparent;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px rgba(237, 87, 107, 0.6),
+      0 8px 8px rgba(237, 87, 107, 0.6);
+  }
+}
+
+@keyframes glowYellow {
+  0% {
+    box-shadow: 0 0 0px transparent;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px rgb(240, 197, 110, 0.6),
+      0 8px 8px rgb(240, 197, 110, 0.6);
+  }
+}
+
+@keyframes glowGreen {
+  0% {
+    box-shadow: 0 0 0px transparent;
+  }
+  100% {
+    box-shadow: 0 0 8px 8px rgba(159, 166, 132, 0.6),
+      0 8px 8px rgba(159, 166, 132, 0.6);
+  }
 }
 
 .bleepers {

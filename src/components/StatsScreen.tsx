@@ -24,7 +24,9 @@ const StatsScreen: React.FC<StatsScreenProps> = ({ abilities, stats }) => {
       <div className={styles.statsScreen}>
         <div id="nav" className={styles.nav}>
           <button
-            className={activeTab === "abilities" ? styles.activeStat : styles.abilities}
+            className={
+              activeTab === "abilities" ? styles.activeStat : styles.abilities
+            }
             onClick={() => setActiveTab("abilities")}
           >
             Abilities
@@ -51,7 +53,7 @@ const StatsScreen: React.FC<StatsScreenProps> = ({ abilities, stats }) => {
             <ul>
               {stats.map((stat, index) => (
                 <li key={index} className={styles.statItem}>
-                  <span className={styles.statName}>{stat.name}:</span>
+                  <span className={styles.statName}>{stat.name}</span>
                   <span className={styles.statValue}>{stat.value}</span>
                 </li>
               ))}
