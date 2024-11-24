@@ -2,12 +2,13 @@ import { useState } from "react";
 import Search from "../components/Search";
 import Pokedex from "../components/Pokedex";
 import styles from "./index.module.scss";
+import { Pokemon } from "@/components/types/types";
 
 const Home: React.FC = () => {
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState<Pokemon | undefined>();
   const [triggerGlow, setTriggerGlow] = useState(false);
 
-  const handleSearch = (data: any) => {
+  const handleSearch = (data: Pokemon) => {
     setPokemon(data);
     triggerGlowEffect();
   };

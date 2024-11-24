@@ -20,6 +20,6 @@ export interface PokemonStat {
 }
 
 export interface PokedexProps {
-  pokemon: Pokemon | null;
+  pokemon: Pokemon | undefined;
   triggerGlow: boolean;
 }

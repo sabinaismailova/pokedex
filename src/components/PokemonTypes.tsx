@@ -8,8 +8,8 @@ interface PokemonTypeProps {
 const PokemonTypes: React.FC<PokemonTypeProps> = ({ types }) => {
   return (
     <div className={styles.typesScreen}>
-      {types.map((type) => (
-        <div className={styles.typeContainer}>
+      {types.map((type, key) => (
+        <div className={styles.typeContainer} key={key}>
           <img
             src={`/pokemonTypes/${type.toLowerCase()}.png`}
             alt={`${type} logo`}

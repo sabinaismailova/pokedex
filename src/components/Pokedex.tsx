@@ -11,6 +11,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemon, triggerGlow }) => {
 
   useEffect(() => {
     if (pokemon) {
+      console.log(imageUrl)
       setImageUrl(pokemon.sprites.front_default);
       const interval = setInterval(() => {
         setImageUrl((prevUrl) =>

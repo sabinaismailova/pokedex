@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import styles from "./search.module.scss";
 import pokedex from "../../public/pokedex.png";
+import {Pokemon} from "./types/types"
 
 interface PokemonSearchProps {
-  onSearch: (data: any) => void;
+  onSearch: (data: Pokemon) => void;
 }
 
 const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
