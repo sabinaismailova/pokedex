@@ -3,26 +3,6 @@ import Search from "../components/Search";
 import Pokedex from "../components/Pokedex";
 import styles from "./index.module.scss";
 
-interface PokemonAbility {
-  name: string;
-  effect: string;
-}
-
-interface PokemonStat {
-  name: string;
-  value: number;
-}
-
-interface Pokemon {
-  name: string;
-  sprites: {
-    front_default: string;
-    back_default: string;
-  };
-  abilities: PokemonAbility[];
-  stats: PokemonStat[];
-}
-
 const Home: React.FC = () => {
   const [pokemon, setPokemon] = useState(null);
   const [triggerGlow, setTriggerGlow] = useState(false);

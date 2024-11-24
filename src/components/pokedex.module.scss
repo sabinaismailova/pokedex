@@ -6,7 +6,7 @@
   height: 100%;
   font-family: "Courier New", Courier, monospace;
   background-color: #dc092e;
-  margin-top: 2%;
+  margin-top: 1%;
   color: #170606;
   border: 4px solid #242424;
   border-radius: 8px;
@@ -28,7 +28,7 @@
   border-bottom: 2px solid #242424;
   width: 100%;
   text-align: center;
-  background-color: #34899b;
+  background-color: #226d95;
   font-size: 24px;
   height: 16%;
 }
@@ -38,11 +38,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 89%;
+  height: 96%;
 }
 
 .img {
-  width: 160%;
+  width: 70%;
 }
 
 .statName {
@@ -52,10 +52,10 @@
 .infoScreen {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 80%;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 24px;
+  width: 88%;
+  height: 88%;
+  border: 2px solid #242424;
+  border-radius: 32px;
   background-color: #6bcadd;
   overflow: hidden;
 }
@@ -67,9 +67,43 @@
   flex-direction: column;
   width: 64%;
   height: 64%;
-  border: 2px solid #000000;
+  border: 2px solid #242424;
   border-radius: 56px;
   background-color: #bfbebb;
+  min-height: 252px;
+}
+
+.typesScreen {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  width: 64%;
+  height: 20%;
+  border: 4px solid #313131;
+  border-top: 8px solid #313131;
+  border-left: 8px solid #313131;
+  border-radius: 8px;
+  background-color: #6bcadd;
+  overflow: hidden;
+  margin: 4%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.typeLogo {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.typeContainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
 }
 
 .sideContainer {
@@ -112,7 +146,7 @@
   flex-direction: column;
   width: 90%;
   height: 90%;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid #242424;
   border-radius: 32px;
   background-color: #6bcadd;
   overflow: hidden;
@@ -125,7 +159,7 @@
   flex-direction: column;
   width: 80%;
   height: 80%;
-  border: 2px solid #000000;
+  border: 2px solid #242424;
   border-radius: 48px;
   background-color: #bfbebb;
 }
@@ -149,7 +183,7 @@
   border-right: 2px solid #242424;
   border-bottom: 2px solid #242424;
   font-weight: bold;
-  background-color: #4691a0;
+  background-color: #226d95;
 }
 
 .bigCircle {
@@ -270,7 +304,7 @@
 .pokedexTop {
   display: flex;
   width: 100%;
-  height: 10%;
+  height: 8%;
   padding-top: 2%;
   padding-left: 2%;
 }
@@ -286,5 +320,13 @@
 
   .sideContainer {
     width: 100%;
+  }
+
+  .statsScreenOuter {
+    max-height: 300px;
+  }
+
+  .statsContent {
+    max-height: 300px;
   }
 }
