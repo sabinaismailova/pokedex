@@ -19,7 +19,11 @@ const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
 
     try {
       const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/pokemon/${pokemonName}`;
-      const response = await axios.get(apiUrl);
+      const response = await axios.get(apiUrl, {
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
+        },
+      });
       onSearch(response.data);
     } catch (error) {
       console.error("Error fetching data from the API:", error);
