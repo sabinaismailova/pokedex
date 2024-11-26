@@ -3,7 +3,7 @@ import styles from "./pokedex.module.scss";
 import { Pokemon } from "./types/types";
 
 interface InfoScreenProps {
-  pokemon: Pokemon;
+  pokemon: Pokemon | undefined;
 }
 
 const InfoScreen: React.FC<InfoScreenProps> = ({ pokemon }) => {
@@ -23,16 +23,21 @@ const InfoScreen: React.FC<InfoScreenProps> = ({ pokemon }) => {
     }
   }, [pokemon]);
 
-  if (!pokemon) return null;
   return (
     <div className={styles.infoScreenOuter}>
       <div className={styles.infoScreen}>
-        <h1 className={styles.pokemonName}>
-          {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-        </h1>
-        <div className={styles.imgContainer}>
-          <img src={imageUrl} alt="Pokemon Image" className={styles.img} />
-        </div>
+        {pokemon ? (
+          <>
+            <h1 className={styles.pokemonName}>
+              {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+            </h1>
+            <div className={styles.imgContainer}>
+              <img src={imageUrl} alt="Pokemon Image" className={styles.img} />
+            </div>
+          </>
+        ) : (
+          <h1 className={styles.placeHolderText}>Who's that Pokemon?!</h1>
+        )}
       </div>
     </div>
   );

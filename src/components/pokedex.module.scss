@@ -1,3 +1,22 @@
+@font-face {
+  font-family: "PokemonFont";
+  src: url("../../public/fonts/Pokemon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.placeHolderText {
+  font-family: "PokemonFont", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 56px;
+  padding: 8px;
+  text-align: center;
+  color: #242424;
+}
+
 .container {
   display: flex;
   justify-content: flex-start;
@@ -91,14 +110,14 @@
 }
 
 .typeLogo {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 30%;
 }
 
 .typeContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

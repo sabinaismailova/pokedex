@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./pokedex.module.scss";
 import StatsScreen from "./StatsScreen";
 import PokedexAnimation from "./PokedexAnimation";
-import {PokedexProps} from './types/types'
+import { PokedexProps } from "./types/types";
 import InfoScreen from "./InfoScreen";
 import PokemonTypes from "./PokemonTypes";
 
@@ -11,7 +11,7 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemon, triggerGlow }) => {
 
   useEffect(() => {
     if (pokemon) {
-      console.log(imageUrl)
+      console.log(imageUrl);
       setImageUrl(pokemon.sprites.front_default);
       const interval = setInterval(() => {
         setImageUrl((prevUrl) =>
@@ -24,17 +24,15 @@ const Pokedex: React.FC<PokedexProps> = ({ pokemon, triggerGlow }) => {
     }
   }, [pokemon]);
 
-  if (!pokemon) return null;
-
   return (
     <div className={styles.container}>
       <div className={styles.infoSection}>
-        <PokedexAnimation glow={triggerGlow}/>
-        <InfoScreen pokemon={pokemon}/>
-        <PokemonTypes types={pokemon.types}/>
+        <PokedexAnimation glow={triggerGlow} />
+        <InfoScreen pokemon={pokemon} />
+        <PokemonTypes types={pokemon?.types} />
       </div>
       <div id="side" className={styles.sideContainer}>
-        <StatsScreen abilities={pokemon.abilities} stats={pokemon.stats} />
+        <StatsScreen abilities={pokemon?.abilities} stats={pokemon?.stats} />
       </div>
     </div>
   );
