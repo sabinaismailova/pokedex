@@ -38,6 +38,12 @@ const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
     }
   };
 
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleRequest();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -48,6 +54,7 @@ const Search: React.FC<PokemonSearchProps> = ({ onSearch }) => {
           type="text"
           value={pokemonName}
           onChange={(e) => setPokemonName(e.target.value.toLowerCase())}
+          onKeyDown={handleKeyPress}
           placeholder="Enter Pokémon name"
           className={styles.input}
         />
