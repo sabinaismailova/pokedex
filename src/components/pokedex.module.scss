@@ -169,6 +169,7 @@
   border-radius: 32px;
   background-color: #6bcadd;
   overflow: hidden;
+  min-height: 139.18px;
 }
 
 .statsScreenOuter {
@@ -326,6 +327,13 @@
   height: 8%;
   padding-top: 2%;
   padding-left: 2%;
+}
+
+.loadingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 720px) {

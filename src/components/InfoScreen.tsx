@@ -36,7 +36,7 @@ const InfoScreen: React.FC<InfoScreenProps> = ({ pokemon }) => {
             </div>
           </>
         ) : (
-          <h1 className={styles.placeHolderText}>Who's that Pokemon?!</h1>
+          <h1 className={styles.placeHolderText}>Who&apos;s that Pokemon?!</h1>
         )}
       </div>
     </div>

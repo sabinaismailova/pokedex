@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./pokedex.module.scss";
+import landingimage from "../../public/waiting.gif";
 
 interface PokemonAbility {
   name: string;
@@ -22,7 +23,7 @@ const StatsScreen: React.FC<StatsScreenProps> = ({ abilities, stats }) => {
   return (
     <div className={styles.statsScreenOuter}>
       <div className={styles.statsScreen}>
-        {abilities && stats && (
+        {abilities && stats ? (
           <>
             <div id="nav" className={styles.nav}>
               <button
@@ -67,6 +68,8 @@ const StatsScreen: React.FC<StatsScreenProps> = ({ abilities, stats }) => {
               )}
             </div>
           </>
+        ) : (
+          <img src={landingimage.src} className={styles.loadingImage}></img>
         )}
       </div>
     </div>
